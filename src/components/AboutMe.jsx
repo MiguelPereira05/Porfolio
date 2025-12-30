@@ -1,5 +1,6 @@
 import React from "react";
 import "./AboutMe.css"; // Import the CSS file for styling
+import profilePic from "../assets/eu.jpg";
 
 export default function AboutMe() {
 	return (
@@ -27,7 +28,7 @@ export default function AboutMe() {
 				</div>
 				<div className="about-image">
 					<img
-						src="../src/assets/profile.jpg" // Replace with your actual image path
+						src={profilePic} // Replace with your actual image path
 						alt="Miguel Pereira"
 					/>
 				</div>

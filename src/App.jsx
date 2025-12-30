@@ -8,6 +8,10 @@ import Contact from "./components/Contact.jsx";
 import AboutMe from "./components/AboutMe.jsx";
 
 function App() {
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
 		<>
 			<Navbar />
@@ -19,7 +23,11 @@ function App() {
 				<Contact />
 				<footer>
 					<div className="footer-content">
-						<p>Copyright© 2025 Miguel Pereira. All rights reserved.</p>
+						<p>Copyright© 2025 Miguel Pereira. All rights reserved.
+						<button onClick={scrollToTop} className="scroll-to-top">
+							↑ 
+						</button>
+						</p>
 					</div>
 				</footer>
 			</div>

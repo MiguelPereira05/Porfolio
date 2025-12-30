@@ -1,4 +1,5 @@
 import "./Welcome.css"; // Import the CSS file for styling
+import me from "../assets/eu.jpg";
 
 export default function Welcome() {
 	return (
@@ -11,7 +12,7 @@ export default function Welcome() {
 					<h3>Hello, my name is</h3>
 					<h2 id="name">Miguel Pereira</h2>
 					<p id="position">
-						<span>Full Stack Developer</span>
+						Full Stack Developer
 					</p>
 					<ul className="socials">
 						<li>
@@ -69,7 +70,7 @@ export default function Welcome() {
 				</div>
 				<div className="welcome-image">
 					<img
-						src="../src/assets/eu.jpg"
+						src={me}
 						alt="Miguel Pereira"
 					/>
 				</div>

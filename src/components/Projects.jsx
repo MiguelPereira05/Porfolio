@@ -9,7 +9,7 @@ export default function Projects() {
 		const fetchRepos = async () => {
 			try {
 				const response = await fetch(
-					"https://api.github.com/users/P0laco/repos"
+					"https://api.github.com/users/MiguelPereira05/repos"
 				);
 				const data = await response.json();
 

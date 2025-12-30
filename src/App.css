@@ -54,17 +54,14 @@ section {
   margin-bottom: 20px;
 }
 
-footer {
-  background-color: #626161;
-  font-family: 'SourceSansPro', sans-serif;
-  text-align: center;
-  padding: 10px;
-}
-
 #position {
   font-family: 'SourceSansPro', sans-serif;
   font-size: 35px;
   margin: 0;
+  color : #8200CE;
+}
+body.dark-theme #position {
+  color : #02ABFF;
 }
 
 #techstack-title,
@@ -79,6 +76,50 @@ footer {
   padding-top: 70px;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-family: 'SourceSansPro', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  background-color: #333;
+  height: 60px;
+}
+
+footer div {
+  margin: 0 auto;
+}
+
+.scroll-to-top {    
+  background-color: #8200CE;  
+  color: white;  
+  border: none;  
+  padding: 10px 15px;  
+  border-radius: 15px;  
+  cursor: pointer;  
+  font-size: 16px;  
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.scroll-to-top:hover {
+  background-color: #6200AA;
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .scroll-to-top {
+  background-color: #02ABFF;
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .scroll-to-top:hover {
+  background-color: #028FCC;
+  transition: all 0.3s ease;
+}
+
 
 #othertools {
   display: flex;
@@ -88,12 +129,26 @@ footer {
   list-style: none;
 }
 
+ul#othertools li {
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #000;
+  border-radius: 5px;
+}
+body.dark-theme ul#othertools li {
+  color: #fff;
+}
+
 /* Blinking cursor effect */
-#position span::after {
+#position::after {
   content: "|"; /* The cursor */
   display: inline-block;
   font-weight: bold;
   animation: blink 0.75s steps(2, start) infinite;
+  color: #8200CE;
+}
+body.dark-theme #position::after {
+  color: #02ABFF;
 }
 
 @keyframes blink {
@@ -110,6 +165,7 @@ span {
   font-family: SourceSansPro, sans-serif;
   margin: 0;
   color: #8200CE;
+  -webkit-text-stroke: 1px #000;
 }
 
 body.dark-theme span {

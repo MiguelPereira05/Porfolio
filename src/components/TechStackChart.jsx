@@ -30,7 +30,7 @@ export default function TechStackChart() {
 		const fetchLanguages = async () => {
 			try {
 				const reposResponse = await fetch(
-					"https://api.github.com/users/P0laco/repos"
+					"https://api.github.com/users/MiguelPereira05/repos"
 				);
 				const repos = await reposResponse.json();
 
