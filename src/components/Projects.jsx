@@ -50,7 +50,7 @@ export default function Projects() {
 							className="project-card"
 							key={repo.id}
 							style={{
-								backgroundImage: `url(${document.body.classList.contains('dark-theme') ? githubLogo : purpleGithubLogo})`,
+								backgroundImage: `url(${document.body.classList.contains('dark-theme') ? purpleGithubLogo : githubLogo})`,
 								backgroundRepeat: 'no-repeat',
 								backgroundPosition: 'center center',
 								backgroundSize: 'cover'
