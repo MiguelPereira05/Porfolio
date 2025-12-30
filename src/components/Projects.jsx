@@ -6,6 +6,9 @@ import githubLogo from "../assets/GithubLogo.png";
 export default function Projects() {
 	const [repos, setRepos] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [isDarkTheme, setIsDarkTheme] = useState(
+		document.body.classList.contains("dark-theme")
+	);
 
 	useEffect(() => {
 		const fetchRepos = async () => {
@@ -38,6 +41,21 @@ export default function Projects() {
 		fetchRepos();
 	}, []);
 
+	// Listen for theme changes
+	useEffect(() => {
+		const observer = new MutationObserver(() => {
+			const isDark = document.body.classList.contains("dark-theme");
+			setIsDarkTheme(isDark);
+		});
+
+		observer.observe(document.body, {
+			attributes: true,
+			attributeFilter: ["class"]
+		});
+
+		return () => observer.disconnect();
+	}, []);
+
 	return (
 		<section className="projects-section" id="projects">
 			<h2 id="projects-title">Latest<span>Projects</span></h2>
@@ -50,7 +68,7 @@ export default function Projects() {
 							className="project-card"
 							key={repo.id}
 							style={{
-								backgroundImage: `url(${document.body.classList.contains('dark-theme') ? purpleGithubLogo : githubLogo})`,
+								backgroundImage: `url(${isDarkTheme ? githubLogo : purpleGithubLogo})`,
 								backgroundRepeat: 'no-repeat',
 								backgroundPosition: 'center center',
 								backgroundSize: 'cover'
