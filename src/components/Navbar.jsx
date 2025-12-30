@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import "./Navbar.css"; // Import the CSS file for styling
+import blackDuck from "../assets/blackDuck.png";
+import whiteDuck from "../assets/whiteDuck.png";
 
 export default function Navbar() {
-    const [duckImage, setDuckImage] = useState("../src/assets/blackDuck.png"); // Initial image
+    const [duckImage, setDuckImage] = useState(blackDuck); // Initial image
     const [navbarBg, setNavbarBg] = useState("#C9C9C9"); // Initial navbar background color
     const [navbarTextColor, setNavbarTextColor] = useState("black"); // Initial navbar text color
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the hamburger menu
@@ -11,7 +13,7 @@ export default function Navbar() {
     // Combined function to toggle the duck image, navbar background, and page theme
     const toggleDuckAndTheme = () => {
         setDuckImage((prevImage) => {
-            if (prevImage === "../src/assets/blackDuck.png") {
+            if (prevImage === blackDuck) {
                 // Change to white duck and update theme
                 document.body.classList.add("dark-theme");
                 document.body.classList.remove("light-theme");
@@ -29,7 +31,7 @@ export default function Navbar() {
 
                 setNavbarBg("#626161"); // Change navbar background to black
                 setNavbarTextColor("white"); // Change navbar text color to white
-                return "../src/assets/whiteDuck.png";
+                return whiteDuck;
             } else {
                 // Change to black duck and revert theme
                 document.body.classList.add("light-theme");
@@ -48,7 +50,7 @@ export default function Navbar() {
 
                 setNavbarBg("#C9C9C9"); // Change navbar background to white
                 setNavbarTextColor("black"); // Change navbar text color to black
-                return "../src/assets/blackDuck.png";
+                return blackDuck;
             }
         });
     };
@@ -62,7 +64,7 @@ export default function Navbar() {
         document.body.style.color = "black";
         setNavbarBg("#C9C9C9");
         setNavbarTextColor("black");
-        setDuckImage("../src/assets/blackDuck.png");
+        setDuckImage(blackDuck);
     }, []); // Empty dependency array ensures this runs only once on page load
 
     // Toggle the hamburger menu

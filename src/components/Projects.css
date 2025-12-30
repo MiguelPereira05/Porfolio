@@ -25,10 +25,6 @@
   position: relative;
 }
 
-/* Dark Theme */
-body.dark-theme .project-card {
-}
-
 /* Hover Effects */
 .project-card:hover {
   transform: translateY(-5px);
