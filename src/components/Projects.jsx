@@ -8,10 +8,20 @@ export default function Projects() {
 	useEffect(() => {
 		const fetchRepos = async () => {
 			try {
+				const token = import.meta.env.VITE_GITHUB_TOKEN;
 				const response = await fetch(
-					"https://api.github.com/users/MiguelPereira05/repos"
+					"https://api.github.com/users/MiguelPereira05/repos",
+					{
+						headers: token ? { Authorization: `token ${token}` } : {}
+					}
 				);
 				const data = await response.json();
+
+				if (!response.ok) {
+					console.error("GitHub API error:", response.status, data);
+					setLoading(false);
+					return;
+				}
 
 				// Filter out private repositories
 				const publicRepos = data.filter((repo) => !repo.private);
@@ -20,7 +30,6 @@ export default function Projects() {
 			} catch (error) {
 				console.error("Error fetching repositories:", error);
 				setLoading(false);
-				console.log(data);
 			}
 		};
 
