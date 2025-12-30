@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Projects.css"; // Import the CSS file for styling
+import purpleGithubLogo from "../assets/purpleGithubLogo.png";
+import githubLogo from "../assets/GithubLogo.png";
 
 export default function Projects() {
 	const [repos, setRepos] = useState([]);
@@ -47,6 +49,12 @@ export default function Projects() {
 						<div
 							className="project-card"
 							key={repo.id}
+							style={{
+								backgroundImage: `url(${document.body.classList.contains('dark-theme') ? githubLogo : purpleGithubLogo})`,
+								backgroundRepeat: 'no-repeat',
+								backgroundPosition: 'center center',
+								backgroundSize: 'cover'
+							}}
 						>
 							<h3>{repo.name}</h3>
 							<p>{repo.description || "No description available."}</p>
