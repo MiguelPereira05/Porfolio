@@ -35,7 +35,7 @@ export default function Welcome() {
 						</li>
 						<li>
 							<a
-								href="https://github.com/P0laco"
+								href="https://github.com/MiguelPereira05"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
