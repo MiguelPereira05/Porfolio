@@ -1,5 +1,5 @@
 import "./Welcome.css"; // Import the CSS file for styling
-import me from "../assets/eu.jpg";
+import me from "../assets/perfil_new.jpg";
 
 export default function Welcome() {
 	return (
